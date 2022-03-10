@@ -79,4 +79,29 @@ public class CoursesController {
         .setLectures(lectures)
         .setLectorDescription(currentCourse.getLectorDescription());
     }
+
+    @GetMapping("/edit/{id}")
+    public CourseEditBindingModel updateCourse(@PathVariable String id){
+
+        return this.courseService.findCourseById(id);
+    }
+
+    @PutMapping("/edit/{id}")
+    public ResponseEntity<?> edit(@PathVariable String id,
+                                  @RequestBody CourseEditBindingModel courseEditBindingModel) throws CourseDuplicationException {
+
+        courseService.edit(courseEditBindingModel);
+        return ResponseEntity.status(201).build();
+    }
+
+    @GetMapping("/languages")
+    public List<LanguageServiceDto> getAllLanguages() {
+        return this.languageService.getAllLanguages();
+    }
+
+    @GetMapping("/categories")
+    public List<CategoryServiceDto> getAllCategories() {
+        return this.categoryService.getAllCategories();
+    }
+
 }
