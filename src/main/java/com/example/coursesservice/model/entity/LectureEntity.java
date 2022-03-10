@@ -9,6 +9,8 @@ public class LectureEntity extends BaseEntity{
 
     private String name;
     private String resourceUrl;
+    private String lectureDescription;
+
 
     public LectureEntity() {
     }
@@ -33,6 +35,15 @@ public class LectureEntity extends BaseEntity{
 
     public LectureEntity setResourceUrl(String resourceUrl) {
         this.resourceUrl = resourceUrl;
+        return this;
+    }
+
+    public String getLectureDescription() {
+        return lectureDescription;
+    }
+
+    public LectureEntity setLectureDescription(String lectureDescription) {
+        this.lectureDescription = lectureDescription;
         return this;
     }
 }
