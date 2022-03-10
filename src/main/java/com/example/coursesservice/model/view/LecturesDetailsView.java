@@ -3,18 +3,16 @@ package com.example.coursesservice.model.view;
 public class LecturesDetailsView {
 
     private String resourceUrl;
-    private String description;
+    private String lectureDescription;
     private String name;
-    private String lectorDescription;
 
     public LecturesDetailsView() {
     }
 
-    public LecturesDetailsView(String resourceUrl, String description, String name, String lectorDescription) {
+    public LecturesDetailsView(String resourceUrl, String lectureDescription, String name) {
         this.resourceUrl = resourceUrl;
-        this.description = description;
+        this.lectureDescription = lectureDescription;
         this.name = name;
-        this.lectorDescription = lectorDescription;
     }
 
     public String getResourceUrl() {
@@ -26,12 +24,12 @@ public class LecturesDetailsView {
         return this;
     }
 
-    public String getDescription() {
-        return description;
+    public String getLectureDescription() {
+        return lectureDescription;
     }
 
-    public LecturesDetailsView setDescription(String description) {
-        this.description = description;
+    public LecturesDetailsView setLectureDescription(String lectureDescription) {
+        this.lectureDescription = lectureDescription;
         return this;
     }
 
@@ -44,12 +42,4 @@ public class LecturesDetailsView {
         return this;
     }
 
-    public String getLectorDescription() {
-        return lectorDescription;
-    }
-
-    public LecturesDetailsView setLectorDescription(String lectorDescription) {
-        this.lectorDescription = lectorDescription;
-        return this;
-    }
 }
