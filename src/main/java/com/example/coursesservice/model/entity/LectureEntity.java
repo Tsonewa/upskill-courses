@@ -11,7 +11,6 @@ public class LectureEntity extends BaseEntity{
     private String resourceUrl;
     private String lectureDescription;
 
-
     public LectureEntity() {
     }
 

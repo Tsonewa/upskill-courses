@@ -27,6 +27,10 @@ public class InitDatabase implements CommandLineRunner {
     @Override
     public void run(String... args) throws Exception {
 
+        if(this.categoryRepository.count() > 0 || this.languageRepository.count() > 0){
+            return;
+        }
+
         initCategories();
         initLanguages();
     }
