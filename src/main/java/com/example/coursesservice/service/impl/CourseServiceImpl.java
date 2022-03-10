@@ -74,6 +74,12 @@ public class CourseServiceImpl implements CourseService {
         this.courseRepository.deleteById(id);
     }
 
+    @Override
+    public CourseEntity getCourseEntityById(String id) {
+
+        return this.courseRepository.getById(id);
+    }
+
     private boolean isExist(String name) {
 
         return this.courseRepository.existsByName(name);
