@@ -80,10 +80,13 @@ public class CoursesController {
         .setLectorDescription(currentCourse.getLectorDescription());
     }
 
-
-
     @GetMapping("/languages")
-        public List<LectureEntity> getAllLanguages(){
-        return null;
-        }
+    public List<LanguageServiceDto> getAllLanguages() {
+        return this.languageService.getAllLanguages();
+    }
+
+    @GetMapping("/categories")
+    public List<CategoryServiceDto> getAllCategories() {
+        return this.categoryService.getAllCategories();
+    }
 }
