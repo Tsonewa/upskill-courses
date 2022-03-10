@@ -4,6 +4,8 @@ public class LectureBindingModel {
 
     private String name;
     private String resourceUrl;
+    private String lectureDescription;
+
 
     public LectureBindingModel() {
     }
@@ -28,6 +30,15 @@ public class LectureBindingModel {
 
     public LectureBindingModel setResourceUrl(String resourceUrl) {
         this.resourceUrl = resourceUrl;
+        return this;
+    }
+
+    public String getLectureDescription() {
+        return lectureDescription;
+    }
+
+    public LectureBindingModel setLectureDescription(String lectureDescription) {
+        this.lectureDescription = lectureDescription;
         return this;
     }
 }

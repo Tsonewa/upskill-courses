@@ -23,6 +23,7 @@ public class CourseEntity extends BaseEntity {
     private List<LanguageEntity> languages;
     private List<LectureEntity> lectures;
     private String lector;
+    private String lectorDescription;
     //    private List<UserEntity> companyOwners;
     private String skills;
 //    private List<BookingEntity> bookings;
@@ -140,6 +141,15 @@ public class CourseEntity extends BaseEntity {
 
     public CourseEntity setLectures(List<LectureEntity> lectures) {
         this.lectures = lectures;
+        return this;
+    }
+
+    public String getLectorDescription() {
+        return lectorDescription;
+    }
+
+    public CourseEntity setLectorDescription(String lectorDescription) {
+        this.lectorDescription = lectorDescription;
         return this;
     }
 }

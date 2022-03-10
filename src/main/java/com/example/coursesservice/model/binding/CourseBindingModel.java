@@ -1,15 +1,11 @@
 package com.example.coursesservice.model.binding;
 
-import com.example.coursesservice.model.entity.CategoryEntity;
-import com.example.coursesservice.model.entity.LanguageEntity;
-import com.example.coursesservice.model.entity.LectureEntity;
-import com.example.coursesservice.model.enums.StatusNameEnum;
+
 import org.springframework.format.annotation.DateTimeFormat;
 
 import java.math.BigDecimal;
 import java.time.LocalDate;
 import java.util.List;
-import java.util.Set;
 
 public class CourseBindingModel {
 
@@ -24,6 +20,7 @@ public class CourseBindingModel {
     private String lector;
     private Integer duration;
     private String skills;
+    private String lectorDescription;
 
 //    private List<UserEntity> companyOwners;
 //    private List<BookingEntity> bookings;
@@ -128,6 +125,15 @@ public class CourseBindingModel {
 
     public CourseBindingModel setSkills(String skills) {
         this.skills = skills;
+        return this;
+    }
+
+    public String getLectorDescription() {
+        return lectorDescription;
+    }
+
+    public CourseBindingModel setLectorDescription(String lectorDescription) {
+        this.lectorDescription = lectorDescription;
         return this;
     }
 }
