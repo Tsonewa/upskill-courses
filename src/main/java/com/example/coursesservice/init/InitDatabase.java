@@ -33,6 +33,10 @@ public class InitDatabase implements CommandLineRunner {
 
     private void initLanguages() {
 
+        if(languageRepository.count()>0){
+            return;
+        }
+
         Arrays.stream(LanguageEnum.values())
                 .forEach(l -> {
                     LanguageEntity languageEntity = new LanguageEntity()
@@ -43,6 +47,9 @@ public class InitDatabase implements CommandLineRunner {
     }
 
     private void initCategories() {
+        if(this.categoryRepository.count()>0){
+            return;
+        }
 
         Arrays.stream(CategoryNameEnum.values())
                 .forEach(c -> {
