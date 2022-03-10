@@ -79,14 +79,4 @@ public class CoursesController {
         .setLectures(lectures)
         .setLectorDescription(currentCourse.getLectorDescription());
     }
-
-    @GetMapping("/languages")
-    public List<LanguageServiceDto> getAllLanguages() {
-        return this.languageService.getAllLanguages();
-    }
-
-    @GetMapping("/categories")
-    public List<CategoryServiceDto> getAllCategories() {
-        return this.categoryService.getAllCategories();
-    }
 }

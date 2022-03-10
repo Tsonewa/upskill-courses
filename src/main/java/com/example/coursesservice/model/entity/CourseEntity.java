@@ -25,9 +25,9 @@ public class CourseEntity extends BaseEntity {
     private List<LectureEntity> lectures;
     private String lector;
     private String lectorDescription;
-    //    private List<UserEntity> companyOwners;
-    private String skills;
 //    private List<BookingEntity> bookings;
+//    private List<UserEntity> companyOwners;
+private String skills;
 
 
     public CourseEntity() {
