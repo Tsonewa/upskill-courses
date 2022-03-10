@@ -2,12 +2,16 @@ package com.example.coursesservice.web;
 
 import com.example.coursesservice.exception.CourseDuplicationException;
 import com.example.coursesservice.model.binding.CourseBindingModel;
+import com.example.coursesservice.model.binding.CourseEditBindingModel;
 import com.example.coursesservice.model.entity.CourseEntity;
-import com.example.coursesservice.model.entity.LectureEntity;
+import com.example.coursesservice.model.service.CategoryServiceDto;
+import com.example.coursesservice.model.service.LanguageServiceDto;
 import com.example.coursesservice.model.view.CourseDetailsView;
 import com.example.coursesservice.model.view.CourseStreamDetailsView;
 import com.example.coursesservice.model.view.LecturesDetailsView;
+import com.example.coursesservice.service.CategoryService;
 import com.example.coursesservice.service.CourseService;
+import com.example.coursesservice.service.LanguageService;
 import com.example.coursesservice.service.LectureService;
 import org.modelmapper.ModelMapper;
 import org.springframework.http.ResponseEntity;
@@ -23,11 +27,15 @@ public class CoursesController {
     private final CourseService courseService;
     private final LectureService lectureService;
     private final ModelMapper modelMapper;
+    private final CategoryService categoryService;
+    private final LanguageService languageService;
 
-    public CoursesController(CourseService courseService, LectureService lectureService, ModelMapper modelMapper) {
+    public CoursesController(CourseService courseService, LectureService lectureService, ModelMapper modelMapper, CategoryService categoryService, LanguageService languageService) {
         this.courseService = courseService;
         this.lectureService = lectureService;
         this.modelMapper = modelMapper;
+        this.categoryService = categoryService;
+        this.languageService = languageService;
     }
 
     @PostMapping("/create")
