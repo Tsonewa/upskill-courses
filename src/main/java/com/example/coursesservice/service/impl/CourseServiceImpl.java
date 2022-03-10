@@ -79,11 +79,11 @@ public class CourseServiceImpl implements CourseService {
     }
 
     @Override
-<<<<<<< HEAD
     public CourseEntity getCourseEntityById(String id) {
 
         return this.courseRepository.getById(id);
-=======
+    }
+
     public void edit(CourseEditBindingModel courseEditBindingModel) {
 
         CourseEntity courseEntity = this.courseRepository.findById(courseEditBindingModel.getId())
@@ -128,7 +128,6 @@ public class CourseServiceImpl implements CourseService {
         CourseEntity courseEntity = this.courseRepository.findById(id).orElseThrow(() -> new CourseNotFoundException(id));
 
         return modelMapper.map(courseEntity, CourseEditBindingModel.class);
->>>>>>> sasha-branch
     }
 
     private boolean isExist(String name) {
