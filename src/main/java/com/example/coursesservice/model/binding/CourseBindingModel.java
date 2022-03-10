@@ -12,6 +12,7 @@ public class CourseBindingModel {
     private String name;
     private BigDecimal price;
     private String description;
+    private String videoUrl;
     private LocalDate startDate;
     private LocalDate endDate;
     private List<CategoryNameBindingModel> categories;
@@ -134,6 +135,15 @@ public class CourseBindingModel {
 
     public CourseBindingModel setLectorDescription(String lectorDescription) {
         this.lectorDescription = lectorDescription;
+        return this;
+    }
+
+    public String getVideoUrl() {
+        return videoUrl;
+    }
+
+    public CourseBindingModel setVideoUrl(String videoUrl) {
+        this.videoUrl = videoUrl;
         return this;
     }
 }

@@ -1,4 +1,4 @@
 package com.example.coursesservice.service;
 
-public interface LectureSevice {
+public interface LectureService {
 }

@@ -16,6 +16,7 @@ public class CourseEntity extends BaseEntity {
     private BigDecimal price;
     private StatusNameEnum status;
     private String description;
+    private String videoUrl;
     private LocalDate startDate;
     private LocalDate endDate;
     private Integer duration;
@@ -150,6 +151,15 @@ public class CourseEntity extends BaseEntity {
 
     public CourseEntity setLectorDescription(String lectorDescription) {
         this.lectorDescription = lectorDescription;
+        return this;
+    }
+
+    public String getVideoUrl() {
+        return videoUrl;
+    }
+
+    public CourseEntity setVideoUrl(String videoUrl) {
+        this.videoUrl = videoUrl;
         return this;
     }
 }
