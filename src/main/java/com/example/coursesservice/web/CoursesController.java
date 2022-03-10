@@ -2,6 +2,7 @@ package com.example.coursesservice.web;
 
 import com.example.coursesservice.exception.CourseDuplicationException;
 import com.example.coursesservice.model.binding.CourseBindingModel;
+import com.example.coursesservice.model.binding.CourseEditBindingModel;
 import com.example.coursesservice.model.service.CategoryServiceDto;
 import com.example.coursesservice.model.service.LanguageServiceDto;
 import com.example.coursesservice.service.CategoryService;
@@ -27,12 +28,26 @@ public class CoursesController {
     }
 
     @PostMapping("/create")
-
     public ResponseEntity<?> create(@RequestBody CourseBindingModel courseBindingModel) throws CourseDuplicationException {
 
         courseService.add(courseBindingModel);
         return ResponseEntity.status(201).build();
     }
+
+    @GetMapping("/edit/{id}")
+            public CourseEditBindingModel updateCourse(@PathVariable String id){
+
+        return this.courseService.findCourseById(id);
+    }
+
+    @PutMapping("/edit/{id}")
+    public ResponseEntity<?> edit(@PathVariable String id,
+                                  @RequestBody CourseEditBindingModel courseEditBindingModel) throws CourseDuplicationException {
+
+        courseService.edit(courseEditBindingModel);
+        return ResponseEntity.status(201).build();
+    }
+
 
     @DeleteMapping("/delete/{id}")
     public ResponseEntity<?> delete(@PathVariable String id) {
